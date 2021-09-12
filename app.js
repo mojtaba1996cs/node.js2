@@ -9,6 +9,11 @@ app.use(express.urlencoded());
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
+app.post('/url', function(req, res) {
+    const url = req.body.url;
+
+    res.send(url);
+});
 
 app.listen(PORT, () => {
   console.log(`App up at port ${PORT}`);
